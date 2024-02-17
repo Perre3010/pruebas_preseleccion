@@ -1,0 +1,51 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Selecciona una fuente divertida */
+    background-color: #f3f3f3;
+}
+
+.formulario {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.numero-container {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin: 5px;
+    font-size: 16px;
+    border: 2px solid #3498db; /* Color del borde */
+    border-radius: 5px;
+    outline: none;
+}
+
+.numero-no-primo {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 20px;
+    color: #e74c3c; /* Color del número no primo */
+}
+
+#submitBtn {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #2ecc71; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+h1 {
+    text-align: center;
+    color: #3498db; /* Color del título */
+}
