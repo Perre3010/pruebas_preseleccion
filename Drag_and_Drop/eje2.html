@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Drag and Drop</title>
+</head>
+<body>
+
+    
+    <h1>Drag the rectangles, ovals, and lines here to put the giraffe together again.</h1>
+    
+
+    <div>
+        <img id="silueta" src="silueta.png">
+    </div>
+
+    <div id="contenedor">
+        <div id="imagen1" class="contorno" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="imagen2" class="contorno" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="imagen3" class="contorno" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="imagen4" class="contorno" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="imagen5" class="contorno" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="imagen6" class="contorno" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="imagen7" class="contorno" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="imagen8" class="contorno" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="imagen9" class="contorno" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="imagen10" class="contorno" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="imagen11" class="contorno" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="imagen12" class="contorno" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+
+    <div id="imagenes">
+        <img id="drag1" src="cuello.png" class="draggable" draggable="true" ondragstart="drag(event)">
+        <img id="drag2" src="cuerpo.png" class="draggable" draggable="true" ondragstart="drag(event)">
+        <img id="drag3" src="brazo_der.png" class="draggable" draggable="true" ondragstart="drag(event)">
+        <img id="drag4" src="brazo_iz.png" class="draggable" draggable="true" ondragstart="drag(event)">
+        <img id="drag5" src="pie_iz.png" class="draggable" draggable="true" ondragstart="drag(event)">
+        <img id="drag6" src="pie_der.png" class="draggable" draggable="true" ondragstart="drag(event)">
+        <img id="drag7" src="cola1.png" class="draggable" draggable="true" ondragstart="drag(event)">
+        <img id="drag8" src="cola2.png" class="draggable" draggable="true" ondragstart="drag(event)">
+        <img id="drag9" src="cabeza.png" class="draggable" draggable="true" ondragstart="drag(event)">
+        <img id="drag10" src="oreja.png" class="draggable" draggable="true" ondragstart="drag(event)">
+        <img id="drag11" src="oreja_iz.png" class="draggable" draggable="true" ondragstart="drag(event)">
+        <img id="drag12" src="oreja_der.png" class="draggable" draggable="true" ondragstart="drag(event)">
+    </div>
+
+    <div id="boton">
+        <button onclick="verificarColocacion()">Verificar</button>
+    </div>
+
+    <script src="script.js"></script>
+    <audio id="audioVeryGood" src="very-good.mp3"></audio>
+
+    
+</body>
+</html>
+

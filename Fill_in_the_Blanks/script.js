@@ -51,9 +51,16 @@ function verificar() {
 for (let i = 1; i <= 100; i++) {
     if (esPrimo(i)) {
         document.write("<div class='numero-container'>");
-        document.write("<label for='numero" + i + "'>" + "</label>");
-        document.write("<input type='text' id='numero" + i + "' name='numeros[]' maxlength='3' required>");
+        document.write("<label for='numero" + i + "'></label>");
+        
+        // Reemplaza el input por una imagen con la clase 'esfera'
+        document.write("<img class='esfera' id='esfera" + i + "' src='esfera.png' onclick='esferaClic(" + i + ")' alt='Esfera' width='25' height='25'>");
+        
+        // Mantiene una caja de texto oculta con la clase 'numero-input'
+        document.write("<input type='text' id='numero" + i + "' class='numero-input' name='numeros[]' maxlength='3' required style='display: none;'>");
+        
         document.write("</div>");
+        
     } else {
         document.write("<div class='numero-no-primo'>");
         document.write(i);
@@ -65,4 +72,16 @@ for (let i = 1; i <= 100; i++) {
 function reproducirAudio() {
     const audio = document.getElementById('audioVeryGood');
     audio.play(); // Reproduce el audio
+}
+
+function esferaClic(index) {
+    const esfera = document.getElementById('esfera' + index);
+    const input = document.getElementById('numero' + index);
+
+    // Oculta la esfera
+    esfera.style.display = 'none';
+
+    // Muestra la caja de texto
+    input.style.display = 'block';
+    input.focus(); // Coloca el foco en la caja de texto
 }

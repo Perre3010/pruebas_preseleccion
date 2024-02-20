@@ -1,47 +1,126 @@
 body {
-    display: grid;
-    justify-content:  center;
-    align-items: center;   
-    background-color: black;
-}
-
-.contenedor {
-    position: relative;
-    margin-top: 0px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    position: absolute;
     
-
+    display: flex;
+    
+}
+h1{
+    margin-left: 200px;
 }
 
-.pieza {
+#contenedor {
+    display: flex;
+    flex-direction: row-reverse;
+    
+    position: absolute;
+    left: 400px;
+    top: 90px;
+}
+#silueta{
+    position: absolute;
+    left: 400px;
+    top: 90px;
+}
+
+button{
+     position: absolute;
+    left: 700px;
+    top: 640px;
+    font-size: 34px;
+    background-color: #FFA500; /* Naranja */
+    color: #8B4513; /* Marrón */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    
 }
 
 .contorno {
-    border: 2px dashed #666666;
-    position: absolute;
-}
-
-#verificarBtn {
     
-    padding: 10px;
-    cursor: pointer;
+    /*border: 1px dashed #ccc;*/ 
     position: absolute;
 }
-
-#texto{
+#imagenes{
     position: absolute;
-    
+    left: 1000px;
+    top: 150px;
 }
 
-button {
-font-size: 16px;
-font-weight: bold;
-color: #fff;
-background-color: #4caf50;
-border: none;
-padding: 15px 20px;
-border-radius: 10px;
-cursor: pointer;
-transition: background-color 0.3s ease;
+#imagen1{
+    width: 65px;
+    height: 253px;
+    left: 48px;
+    top: 73px;
+}
+
+#imagen2{
+    width: 195px;
+    height: 116px;
+    left: 75px;
+    top: 330px;
+}
+#imagen3{
+    width: 15px;
+    height: 160px;
+    left: 84px;
+    top: 431px;
+}
+#imagen4{
+    width: 15px;
+    height: 160px;
+    left: 115px;
+    top: 436px;
+}
+#imagen5{
+    width: 15px;
+    height: 145px;
+    left: 195px;
+    top: 444px;
+}
+#imagen6{
+    width: 15px;
+    height: 138px;
+    left: 233px;
+    top: 451px;
+}
+#imagen7{
+    width: 50px;
+    height: 76px;
+    left: 273px;
+    top: 358px;
+}
+#imagen8{
+    width: 20px;
+    height: 20px;
+    left: 307px;
+    top: 434px;
+}
+#imagen9{
+    width: 80px;
+    height: 29px;
+    left: 4px;
+    top: 40px;
+}
+#imagen10{
+    width: 30px;
+    height: 21px;
+    left: 85px;
+    top: 48px;
+}
+#imagen11{
+    width: 10px;
+    height: 37px;
+    left: 67px;
+    top: 2px;
+}
+#imagen12{
+    width: 19px;
+    height: 35px;
+    left: 80px;
+    top: 3px;
+}
+#cuello{
+height: 320px;
 }

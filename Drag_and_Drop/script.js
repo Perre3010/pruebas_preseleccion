@@ -1,83 +1,81 @@
-// Selecciona todas las piezas y contornos del rompecabezas
-const piezas = document.querySelectorAll('.pieza');
-const contornos = document.querySelectorAll('.contorno');
-
-// Añade eventos de arrastrar y soltar a las piezas
-piezas.forEach(pieza => {
-    pieza.addEventListener('dragstart', dragStart);
-    pieza.addEventListener('dragend', dragEnd);
-});
-
-// Añade eventos de arrastrar y soltar a los contornos
-contornos.forEach(contorno => {
-    contorno.addEventListener('dragover', dragOver);
-    contorno.addEventListener('dragenter', dragEnter);
-    contorno.addEventListener('dragleave', dragLeave);
-    contorno.addEventListener('drop', drop);
-});
-
-let piezaArrastrada = null;
-
-// Función para el inicio del arrastre
-function dragStart() {
-    piezaArrastrada = this;
-    setTimeout(() => (this.style.display = 'none'), 0);
+function allowDrop(event) {
+    event.preventDefault();
 }
 
-// Función para el final del arrastre
-function dragEnd() {
-    this.style.display = 'block';
-    piezaArrastrada = null;
+function drag(event) {
+    event.dataTransfer.setData("text", event.target.id);
 }
 
-// Evita el comportamiento predeterminado y permite soltar las piezas en los contornos
-function dragOver(e) {
-    e.preventDefault();
-}
+function drop(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text");
+    var draggedElement = document.getElementById(data);
+    var dropTarget = event.target;
 
-// Marca un contorno como "hovered" cuando una pieza entra en él
-function dragEnter() {
-    this.classList.add('hovered');
-}
+    if (dropTarget.classList.contains("contorno")) {
+        // Limpiar el contorno antes de agregar la nueva imagen
+        dropTarget.innerHTML = "";
 
-// Elimina la marca "hovered" cuando una pieza sale de un contorno
-function dragLeave() {
-    this.classList.remove('hovered');
-}
+        // Crear una nueva imagen para obtener las dimensiones naturales
+        var tempImage = new Image();
+        tempImage.src = draggedElement.src;
 
-// Coloca la pieza arrastrada en un contorno si este último está marcado como "hovered"
-function drop() {
-    if (this.classList.contains('hovered')) {
-        this.appendChild(piezaArrastrada);
-        this.classList.remove('hovered');
+        // Ajustar el tamaño del contorno al tamaño de la imagen
+        dropTarget.style.width = tempImage.naturalWidth + "px";
+        dropTarget.style.height = tempImage.naturalHeight + "px";
+
+        // Agregar la imagen al contorno
+        dropTarget.appendChild(draggedElement);
     }
 }
 
-// Función para verificar si todas las piezas están en su lugar
-function verificar() {
-    let todasEnSuLugar = true;
+function verificarColocacion() {
+    var contorno1 = document.getElementById("imagen1");
+    var contorno2 = document.getElementById("imagen2");
+    var contorno3 = document.getElementById("imagen3");
+    var contorno4 = document.getElementById("imagen4");
+    var contorno5 = document.getElementById("imagen5");
+    var contorno6 = document.getElementById("imagen6");
+    var contorno7 = document.getElementById("imagen7");
+    var contorno8 = document.getElementById("imagen8");
+    var contorno9 = document.getElementById("imagen9");
+    var contorno10 = document.getElementById("imagen10");
+    var contorno11 = document.getElementById("imagen11");
+    var contorno12 = document.getElementById("imagen12");
 
-    contornos.forEach(contorno => {
-        const piezaEnContorno = contorno.querySelector('.pieza');
+    var imagen1 = contorno1.querySelector("img");
+    var imagen2 = contorno2.querySelector("img");
+    var imagen3 = contorno3.querySelector("img");
+    var imagen4 = contorno4.querySelector("img");
+    var imagen5 = contorno5.querySelector("img");
+    var imagen6 = contorno6.querySelector("img");
+    var imagen7 = contorno7.querySelector("img");
+    var imagen8 = contorno8.querySelector("img");
+    var imagen9 = contorno9.querySelector("img");
+    var imagen10 = contorno10.querySelector("img");
+    var imagen11 = contorno11.querySelector("img");
+    var imagen12 = contorno12.querySelector("img");
 
-        // Verifica si una pieza está en el contorno correcto
-        if (!piezaEnContorno || piezaEnContorno.id !== contorno.id.replace('contorno', 'pieza')) {
-            todasEnSuLugar = false;
+    if (imagen1 && imagen2 && imagen3 && imagen4 
+        && imagen5 && imagen6 && imagen7 && imagen8 
+        && imagen9 && imagen10 && imagen11 && imagen12) {
+        // Verificar si las imágenes están en sus contornos correspondientes
+        if (imagen1.id === "drag1" && imagen2.id === "drag2" && imagen3.id === "drag3" && imagen4.id === "drag4" 
+        && imagen5.id === "drag5" && imagen6.id === "drag6" && imagen7.id === "drag7" && imagen8.id === "drag8" 
+        && imagen9.id === "drag9" && imagen10.id === "drag10" && imagen11.id === "drag11" && imagen12.id === "drag12") {
+            reproducirAudio();
+            alert("¡Las imágenes están colocadas correctamente!");
+        } else {
+            alert("¡Las imágenes no están en sus contornos correspondientes!");
         }
-    });
-
-    // Muestra un mensaje según si todas las piezas están en su lugar o no
-    if (todasEnSuLugar) {
-        reproducirAudio();
-        alert('¡Todas las piezas están en su lugar!');
     } else {
-        alert('No todas las piezas están en su lugar. Inténtalo de nuevo.');
+        alert("¡Por favor, coloca las imágenes en su lugar correspondiente antes de verificar!");
     }
 }
 
-// Función para reproducir un audio
+// Función para reproducir un audio 
 function reproducirAudio() {
     const audio = document.getElementById('audioVeryGood');
-    audio.play();
+    audio.play(); // Reproduce el audio
 }
 

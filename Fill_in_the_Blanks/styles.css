@@ -1,6 +1,7 @@
 body {
     font-family: 'Comic Sans MS', cursive, sans-serif; /* Selecciona una fuente divertida */
     background-color: #f3f3f3;
+    
 }
 
 .formulario {
@@ -17,11 +18,11 @@ body {
     margin-right: 10px;
 }
 
+
 input {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     text-align: center;
-    margin: 5px;
     font-size: 16px;
     border: 2px solid #3498db; /* Color del borde */
     border-radius: 5px;
@@ -31,7 +32,7 @@ input {
 .numero-no-primo {
     display: inline-block;
     margin-right: 10px;
-    font-size: 20px;
+    font-size: 30px;
     color: #e74c3c; /* Color del número no primo */
 }
 
@@ -48,4 +49,8 @@ input {
 h1 {
     text-align: center;
     color: #3498db; /* Color del título */
+}
+
+.contorno{
+    
 }
